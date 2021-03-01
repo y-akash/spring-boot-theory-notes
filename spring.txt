@@ -1,0 +1,17 @@
+Spring
+    Handling inter-related dependecies among object is a common problem.
+    And Spring framework tries to help.
+
+What spring framework provide
+    Application Context and Dependecy injection
+    Data Access (Connecting & Working with Database)
+    Spring MVC (easily build web application)
+    there's more other thing spring provide us but these are some basic feature.
+
+
+Spring IoC Container
+    
+    It is a predefined program that responsible to 
+    create an Object and 
+    hold that object inside the memory and
+    inject that object in the other object or class when required i.e dependecy injection

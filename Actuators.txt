@@ -1,0 +1,11 @@
+Realtime application of Actuators:-
+    Imagine you have developed the service and it's ready to use. How will you make sure that your service is running?
+    One way is to hit the endpoint that you have defined which usually will take some request and respond accordingly. right? 
+    And if it throws an exception, you will know that service is down. Do you think this approach is right? 
+    The actuator comes into the picture in such scenario -- for example if you want to check the health of the service - hit the /health endpoint, 
+    if you want info about service, hit /info endpoint and similarly for others.
+
+Actuator Endpoints
+    Actuator endpoints let us monitor and interact with our application.
+
+

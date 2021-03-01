@@ -1,0 +1,24 @@
+4-Bean-Factory
+    create a spring.xml file and proide the bean details.
+    so that we can create the object of a class using BeanFactory.
+    now BeanFactory has been decerpted.
+
+5-Application-Context
+    It is similar to BeanFactory but it provide more features and it is better than BeanFactory.
+
+
+11-Bean-Scope
+    singleton
+        only once per spring container.
+        (in spring by default all beans are singleton.)
+
+    Prototype
+        new bean created with every request or reference.
+
+    web-aware context bean scope
+        request
+            new bean per servlet request
+        session
+            new bean per session
+        global session
+            new bean per global HTTP session (portlet context)

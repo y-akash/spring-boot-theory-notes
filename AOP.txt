@@ -1,0 +1,113 @@
+steps in AOP
+    write Aspects
+    configure where the aspects apply
+
+@Aspect
+    when we have to assign a class as an Aspect.
+    and the method of that class become advice.
+
+
+@Before
+    we annotate this to advice method.
+    this annotation makes our advice method to run
+    before our particular target method.
+    example=>
+        @Before("execution(public string packageName.className.getName())")
+        public void someBasicAdvice() {.....}
+        explation=>
+            so we tell that run someBasicAdvice method before the execution of getName method.
+
+@After
+    run whether method completes or not( if it throws exception between the execution of method)
+    @After("execution(public string packageName.className.getName())"))
+@AfterThrowing
+@AfterReturning
+    run only after the compltion of the method.
+    @AfterReturning(pintcut="args(name)", returning="returnString")
+
+
+@Around
+    the around advice method must accept atleats one argument 
+    which is ProceedingJoinPoint
+    example=>
+        @Around("execution(public void targetMethod())")
+        public void aroundAdvice(ProceedingJoinPoint roceedingJoinPoint){
+            .......
+            .......
+            roceedingJoinPoint.proceed();   //when this line executes than the target method gets called
+            .......
+            .......
+        }
+
+
+wildCard expressions
+    @Before("execution(public * get*(..))")
+        using * we can generalise the above line these are called wildCard expressions.
+        .. => zero or any no of arguments.
+        *=> for one or more arguments.
+
+Advice
+    advice is a standard AOP terminology
+    Aspect class may contain multile advices or advice methods
+
+
+PointCut
+    it is a standard AOP terminology.
+    using PointCut we have to write the expression only once
+    and use it with the dummyMethod name inside the other Advice
+    example=>
+        @PointCut("execution(public * get*(..))")
+        public void dummyMethod(){}
+        explation=>
+            there will be no body in the method who is assigned with @PointCut
+            that method just holds the PointCut expression.
+            so now that can be used in Advice
+            example=>
+                @Before("dummyMethod()")
+                explation=>
+                    now it will excute the @Before based on the expression which holds by the dummyMethod().
+    More feature of PointCut
+        @PointCut("within(packageName.className)")
+        public void dummyMethod(){}
+            explation=>
+                this PointCut will apply to all the methods within the provided className
+
+
+JoinPoint
+
+Advice arguments
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dependencies>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>4.2.1.RELEASE</version>
+    </dependency>
+    <dependency>
+  <groupId>org.aspectj</groupId>
+  <artifactId>aspectjrt</artifactId>
+  <version>1.7.3</version>
+ </dependency>
+    <dependency>
+  <groupId>org.aspectj</groupId>
+  <artifactId>aspectjweaver</artifactId>
+  <version>1.8.6</version>
+ </dependency>
+ <dependency>
+  <groupId>cglib</groupId>
+  <artifactId>cglib</artifactId>
+  <version>3.1</version>
+ </dependency>
+</dependencies>

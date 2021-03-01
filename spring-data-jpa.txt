@@ -1,0 +1,38 @@
+**********Theory**********
+Spring Data JPA
+        JPA (Java Persistence Api)
+                This is a basically a specification that lets us to do ORM (Object - Relation Mapping) when we try connect to DB
+                When we connect from java application to a relational DB 
+                we need to use something like JDBC and run queries and get the result
+                and convert it into object instances
+
+                ORM (Object - Relation Mapping)
+                        in java application we have classes and objects
+                        so ORM maps our entity classes into SQL table 
+                        so that when we connect to the DB we provide some kind of metadata on our entity classes 
+                        so we dont have to do the query and mapping by ourself the framework will handles if for us.
+                        this is how ORM work
+        
+                so JPA is a way to use ORM      
+                so JPA is the API which lets us to configure our entity class and 
+                give it to framework so that framework does the rest  
+                It handles the conversion from sql read queries to object instances which is preety handy.  
+        
+        SO SPRING DATA JPA IS A SEPARATE PROJECT WHICH LETS US TO MAKE WORKING WITH ALL THE ABOVE FUNCTIONALITIES EVEN EASIER.
+        SO SPRING DATA JPA lets us to connect to relational DB and 
+        provide the JPA configuration on our entity class and and framework will handle lot of work for us.
+
+@ManyToOne
+        Entity Relationship
+
+
+**********@Entity**********
+// with the help of @Entity we can map the class to the database 
+// @Entity(name = "EntityName") If you dont provide the name it will be by default ClassName
+@Entity
+// both above are same
+pulic class ClassName {
+	// this is an identifier
+	@Id
+}
+@Entity and @Id is the minimum requiremet to map the class to the database.

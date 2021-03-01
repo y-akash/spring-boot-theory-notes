@@ -1,0 +1,10 @@
+admin-server
+    this is the place where we monitor all the client apllication
+admin-cliet 
+    this is the application which we want to monitor
+
+
+add admin server dependecies for monotoring client's application
+
+@EnableAdminServer
+    annotate this to the main class of the admin-server project.

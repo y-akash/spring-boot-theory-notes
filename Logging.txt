@@ -1,0 +1,59 @@
+--------------------Spring boot logging Architecture--------------------
+	Spring boot
+			Internal logging
+					spring-jcl (springs commons logging Bridge)
+			Public API
+					SLF4J
+						Java Util Logging
+						Log4J2
+						Logback (default)					
+
+
+--------------------Writting Log messages--------------------
+private static final Logger LOGGER = LoggerFactory.getLogger(ClassName.class);
+
+These are some logging level from highest to lowest rank in spring boot
+
+Highest Rank	LOGGER.off();	//It just off the all logs
+				LOGGER.fatal();	//for very severe errors
+				LOGGER.error();	
+				LOGGER.warn();
+				LOGGER.info();	//info is the default logging level in spring boot
+				LOGGER.debug();
+				LOGGER.trace();
+Lowest Rank		LOGGER.all();
+
+so the default logging level is info so from above list
+we can get all the log till info. i.e. here we get fatal, error, warn, info
+
+
+--------------------configure Log level--------------------
+as we know the default logging level is info so 
+we can change it using application.properties file
+	This will give the logs for complete project
+		logging.level.root=DEBUG
+	This will give only specific to com.crudapp package only
+		logging.level.com.crudapp=DEBUG
+
+
+--------------------customize Log Format (Log Pattern)--------------------
+inside application.properties file
+	this format is for console
+		logging.pattern.console=
+	this format is for file	
+		logging.pattern.file=
+
+
+--------------------To store the log in a File--------------------
+This will come in apllication.properties file	
+	It will create the spring.log file to the given path
+		logging.path=D:/folderName/
+		We can specify the log file name 
+		logging.file=D:log/fileName.log		
+
+	file will rotate after 10MB 
+
+
+--------------------------------------------------------------------------------
+Logging configuration details are configured in logback.xml file.
+The logback.xml file should be placed under the class path.

@@ -1,0 +1,74 @@
+Benefits of Spring Boot
+        Dependecy Resoution
+        Minimum configuration
+        Embedded server for testing i.e. tomcat
+        Bean auto scan
+        Health metrics
+
+@SpringBootApplication
+        This annotation goes to the class which has main method and
+        It tells the springboot that this is the starting point for our springboot application
+
+
+SpringApplication.run(ClassName.class, args)
+        we need to tell springboot to start the applictation and 
+        then create a servlet container and host this apllication in that servlet container and make it avilable right.
+
+
+**********
+Controller will only work if it is the part of main class. 
+Example : if main class is in 'package1' and controller is in 'package2', 
+then it won't work.. so controller must be in 'package1.anyname'
+**********
+
+
+@RestController
+        makes this class to serve as a rest endpoints. or
+        If we assign to a class than it means that
+        we can have methods in that class which map to URL requests
+
+
+@RequestMapping        
+        To map specific HTTP methods, 
+        we have to specify in the annotation
+        otherwise it will work for all the request methods
+        ex-> @RequestMapping("/hi")
+        @RequestMapping(value="/hi", method = RequestMethod.GET)
+
+
+@Service
+        it marks the class as Bussiness Service
+        When the application starts up spring creates an instance of this Service class and
+        then it keeps that in its memory and registers that instance
+        we can have other classes and other services or other controllers which can
+        depends on that service class than it declares a dependecy and say 
+        hey spring I need that service class and then spring knows that this is an instance 
+        that has created already and it's going to inject it to those different classes
+        for that we used @Autowired in that class which need the service class
+@Autowired
+
+
+@Column(
+	name = "First_Name",
+	nullable = fale
+)
+private String firstName;
+
+// if we write this @Column before any variable than we can provide custom name to that in the database
+// so here its firstName in java but inside databae the column name will be "First_Name"
+// and we can also provide constraints
+
+
+
+**********Internals**********
+        Bill of Materials
+        Embedded Servlet Container
+
+
+
+
+**********Useful Tips**********
+#Common application properties on spring website
+        we can get exact key to change the configuration in application.properties file
+        ex-> if we want to run the server on port 8090 instead of 8080 than i can change it in a application.properties file
+                server.port=8090

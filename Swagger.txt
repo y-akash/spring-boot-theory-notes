@@ -1,0 +1,26 @@
+Swagger
+    it is a tool which help us to
+        Develop API
+        Interact with API
+        Documentat API
+
+It is mainly popular for documentat generation based on the metadata added to the swagger.
+
+
+------------------------------------------------------------
+@EnableSwagger2
+     this annotation will apply to the Main class to enable the swagger
+
+
+------------------------------------------------------------
+springfox-swagger2
+    if we send localhot:8080/v2/api-docs 
+    than we get the documentation created by the swagger in json format.
+
+
+------------------------------------------------------------
+springfox-swagger-ui
+    so above we are getting documentation in json format
+    if we want the documentation in HTML format tha we have to add the  springfox-swagger-ui dependecy in pom.xml
+    here we have to go localhot:8080/swagger-ui.html or localhot:8080/swagger-ui
+
